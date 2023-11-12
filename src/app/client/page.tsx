@@ -1,3 +1,11 @@
+import { AAA } from "~/app/client/Components";
+
 export default function Client() {
-  return <main>start next 14</main>;
+  return (
+    <main>
+      asdfasdf
+      <AAA />
+      fiefnsildv start next 14
+    </main>
+  );
 }
