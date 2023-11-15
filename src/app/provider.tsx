@@ -1,6 +1,7 @@
 "use client";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactNode, useState } from "react";
+import withGlobalComponents from "~/globalComponents/hocs";
 
 type ProvidersProps = {
   children: ReactNode;
@@ -14,4 +15,4 @@ const Providers = ({ children }: ProvidersProps) => {
   );
 };
 
-export default Providers;
+export default withGlobalComponents(Providers);

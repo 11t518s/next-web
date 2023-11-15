@@ -11,8 +11,6 @@ export const createPortal = <T>(
   Component: React.FC<T>,
   displayName: string,
 ) => {
-  const context = createContext<GlobalComponentContextType<T>>({} as any);
-
   const internalRef = createRef<GlobalComponentContextType<T>>();
 
   const show = (props: T, hidePrevComponentImmediate?: boolean) => {
@@ -36,13 +34,9 @@ export const createPortal = <T>(
     hide,
     Portal: ({ children }: { children?: React.ReactNode }) =>
       createElement(
-        context.Provider,
-        { value: { show, hide } },
-        createElement(
-          GlobalComponentContextProvider,
-          { Component, internalRef } as any,
-          children,
-        ),
+        GlobalComponentContextProvider,
+        { Component, internalRef } as any,
+        children,
       ),
   };
 };

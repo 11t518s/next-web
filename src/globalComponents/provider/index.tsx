@@ -38,7 +38,7 @@ const GlobalComponentContextProvider = <T extends any>({
 
   useImperativeHandle(internalRef, () => context, []);
 
-  if (!props) return <></>;
+  if (!props) return null;
 
   return (
     <GlobalComponentContext.Provider value={context}>
