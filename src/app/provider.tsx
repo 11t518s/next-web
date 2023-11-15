@@ -15,4 +15,4 @@ const Providers = ({ children }: ProvidersProps) => {
   );
 };
 
-export default withGlobalComponents(Providers);
+export default Providers;

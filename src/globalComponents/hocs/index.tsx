@@ -4,7 +4,7 @@ import Toast from "~/globalComponents/Components/Toasts";
 const withGlobalComponents = (Component: ReactNode) => {
   return (
     <>
-      <Component />
+      {Component}
       <Toast.Portal />
     </>
   );
