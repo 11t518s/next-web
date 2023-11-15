@@ -3,6 +3,7 @@
 import { createPortal } from "~/globalComponents/utils";
 
 const Toast = () => {
+  console.log("toast");
   return <></>;
 };
 

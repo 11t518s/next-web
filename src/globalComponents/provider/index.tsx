@@ -11,6 +11,7 @@ import {
   GlobalComponentContextProviderProps,
   GlobalComponentContextType,
 } from "../types";
+import Toast from "~/globalComponents/Components/Toasts";
 
 export const GlobalComponentContext =
   createContext<GlobalComponentContextType | null>(null);
@@ -20,6 +21,7 @@ const GlobalComponentContextProvider = <T extends any>({
   internalRef,
 }: GlobalComponentContextProviderProps<T>) => {
   const [props, setProps] = useState<T | null>(null);
+  console.log("aaaaaaaa");
 
   const hideComponent = useCallback(async () => {
     setProps(null);
@@ -42,6 +44,8 @@ const GlobalComponentContextProvider = <T extends any>({
 
   return (
     <GlobalComponentContext.Provider value={context}>
+      <Toast.Portal />
+
       <Component {...props} />
     </GlobalComponentContext.Provider>
   );
