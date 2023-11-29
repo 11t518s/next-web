@@ -12,5 +12,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <html>{withGlobalComponents(<Providers>{children}</Providers>)}</html>;
+  console.log("aaa");
+  return (
+    <html>
+      <Providers>{children}</Providers>
+    </html>
+  );
 }

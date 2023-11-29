@@ -10,7 +10,10 @@ const AAA = () => {
 
       <button
         onClick={() => {
-          setIsClick((prev) => !prev);
+          document.startViewTransition(() => {
+            setIsClick((prev) => !prev);
+            window.location.href = "/page1";
+          });
         }}
       >
         change click
